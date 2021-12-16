@@ -71,15 +71,17 @@ const App = () => {
 
   return (
     !loading && (
-      <div className="container h-full mx-auto p-4 bg-slate-100 dark:bg-gray-900">
-        <div className="h-5/6 max-h-screen grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="col-span-2 h-full max-h-screen p-2 rounded bg-white dark:bg-gray-700 dark:text-white">
-            <div className="grid grid-cols-2 gap-4 items-center justify-between">
-              <h1 className="text-2xl text-left font-bold">Covid-19 Tracker</h1>
+      <div className="container h-full mx-auto p-6 bg-slate-100 dark:bg-gray-900">
+        <div className="h-5/6 max-h-screen grid grid-cols-1 md:gap-4 md:grid-cols-3">
+          <div className="col-span-2 overflow-auto p-2 rounded bg-white dark:bg-gray-700 dark:text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-between">
+              <h1 className="text-lg md:text-2xl text-center md:text-left font-bold">
+                Covid-19 Tracker
+              </h1>
               <select
                 name="countries"
                 id="countries"
-                className="w-2/3 border-2 border-slate-300 rounded p-2 place-self-end dark:bg-gray-700 dark:text-white"
+                className="w-2/3 border-2 border-slate-300 rounded p-2 place-self-center md:place-self-end dark:bg-gray-700 dark:text-white"
                 onChange={handleSelectChange}
               >
                 <option value="worldwide">Worldwide</option>
@@ -123,12 +125,12 @@ const App = () => {
               dataType={dataType}
             />
           </div>
-          <div className="h-full max-h-screen py-2 rounded bg-white dark:bg-gray-700 dark:text-white">
+          <div className="max-h-fit my-2 md:my-0 py-2 rounded bg-white dark:bg-gray-700 dark:text-white">
             <h2 className="text-xl text-center capitalize">{`${dataType} by country`}</h2>
-            <div className="h-1/3 mx-6 border-2 border-slate-100 overflow-y-scroll shadow-md rounded">
+            <div className="max-h-48 lg:max-h-96 mx-6 border-2 border-slate-100 overflow-y-scroll shadow-md rounded">
               <Table data={countriesData} dataType={dataType} />
             </div>
-            <div className="h-1/2 px-2 rounded shadow-xl m-6 bg-slate-700 dark:shadow-slate-900">
+            <div className="max-h-fit px-2 rounded shadow-xl m-6 bg-slate-700 dark:shadow-slate-900">
               <History dataType={dataType} />
             </div>
           </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .map {
-  height: 500px;
+  height: 40vh;
   background-color: white;
   padding: 1rem;
   border-radius: 20px;
@@ -14,4 +14,16 @@
 .map .leaflet-container {
   height: 100%;
   border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .map {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map {
+    height: 500px;
+  }
 }

@@ -4,7 +4,7 @@ import numeral from "numeral";
 const Table = ({ data, dataType }) => {
   const countries = data?.sort((a, b) => b[dataType] - a[dataType]);
   return (
-    <table className="m-2 table-auto border-collapse border border-gray-400">
+    <table className="h-1/3 w-full table-auto border-collapse border border-gray-400">
       <tbody className="table-row-group">
         {countries?.map((country) => (
           <tr key={country.country}>
