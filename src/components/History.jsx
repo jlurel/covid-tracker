@@ -27,6 +27,21 @@ ChartJS.register(
 const History = ({ dataType }) => {
   const [stats, setStats] = useState([]);
 
+  const colors = {
+    cases: {
+      backgroundColor: "rgba(249, 115, 22, 0.5)",
+      borderColor: "rgb(249, 115, 22)",
+    },
+    deaths: {
+      backgroundColor: "rgba(255, 51, 51, 0.5)",
+      borderColor: "rgb(255, 51, 51)",
+    },
+    recovered: {
+      backgroundColor: "rgba(0, 179, 60, 0.5)",
+      borderColor: "rgb(0, 179, 60)",
+    },
+  };
+
   const options = {
     elements: {
       point: {
@@ -92,8 +107,8 @@ const History = ({ dataType }) => {
               {
                 label: "New stats",
                 data: stats,
-                backgroundColor: "rgba(249, 115, 22, 0.5)",
-                borderColor: "rgb(249, 115, 22)",
+                backgroundColor: colors[dataType].backgroundColor,
+                borderColor: colors[dataType].borderColor,
                 color: "#fff",
                 fill: true,
               },
